@@ -1,0 +1,59 @@
+Edge_Router)
+
+en
+
+show ip route
+
+conf t
+
+ip route 0.0.0.0 0.0.0.0 s0/0/0
+
+exit
+
+show ip route
+
+conf t
+
+ip route 0.0.0.0 0.0.0.0 s0/0/1 5
+
+exit
+
+show ip route
+
+show run
+
+conf t
+
+int s0/0/0
+
+shutdown
+
+exit
+
+conf t
+
+int s0/0/0
+
+no shutdown
+
+exit
+
+show ipv6 route
+
+conf t
+
+ipv6 route ::/0 2001:DB8:A:2::1 5
+
+exit
+
+
+PC A)
+
+tracert 198.0.0.10
+
+tracert 2001:db8:f:f::10
+
+
+
+
+

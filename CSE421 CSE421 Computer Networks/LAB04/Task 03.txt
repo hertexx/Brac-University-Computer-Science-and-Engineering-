@@ -1,0 +1,80 @@
+R1)
+
+en
+
+show ip route
+
+conf t
+
+router rip
+
+version 2
+
+no auto-summary
+
+network 192.168.1.0
+
+network 192.168.2.0
+
+passive-interface g0/0
+
+exit
+
+exit
+
+copy run start
+
+show ip route
+
+R2)
+
+en
+conf t
+
+router rip
+
+version 2
+
+no auto-summary
+
+network 192.168.2.0
+
+network 192.168.3.0
+
+network 192.168.4.0
+
+passive-interface g0/0
+
+exit
+exit
+
+copy run start
+
+show ip route
+
+
+R3)
+
+en
+
+conf t
+
+router rip
+
+version 2
+
+no auto-summary
+
+network 192.168.4.0
+
+network 192.168.5.0
+
+passive-interface g0/0
+
+exit
+
+exit
+
+copy run start
+
+show ip route

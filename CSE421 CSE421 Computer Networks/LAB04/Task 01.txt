@@ -1,0 +1,42 @@
+R1)
+
+en
+
+conf t
+
+ip route 172.31.0.0 255.255.255.0 172.31.1.193
+
+ip route 172.31.1.196 255.255.255.252 172.31.1.193
+
+ip route 172.31.1.128 255.255.255.192 172.31.1.193
+
+exit
+
+show ip route static
+
+
+R2)
+
+en
+
+show ip interface brief
+
+conf t
+
+ip route 172.31.1.0 255.255.255.128 se0/0/0
+
+ip route 172.31.1.128 255.255.255.192 s0/0/1
+
+
+R3)
+
+en
+
+conf t
+
+ip route 0.0.0.0 0.0.0.0 se0/0/1
+
+exit
+
+show ip route
+

@@ -1,0 +1,5 @@
+R1 commands:
+en
+conf t
+int g0/0
+ip helper-address 192.168.60.253
